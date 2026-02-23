@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>NEXA • Criar Conta</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f0f0f, #151515);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      background: #111;
+      padding: 48px;
+      border-radius: 24px;
+      border: 1px solid #222;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    .container img {
+      display: block;
+      margin: 0 auto 16px;
+      max-width: 140px;
+      opacity: 0.95;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    p.subtitle {
+      font-size: 14px;
+      color: #aaa;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: #888;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid #222;
+      background: #0d0d0d;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #ff4d4d;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      border-radius: 40px;
+      border: none;
+      background: #ff4d4d;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 16px;
+    }
+
+    button:hover {
+      background: #e63939;
+    }
+
+    #msg {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #aaa;
+      text-align: center;
+    }
+
+    .footer {
+      margin-top: 32px;
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <img src="nexalogo-removebg-preview.png" alt="Logo Nexa">
+
+    <h1>Criar conta</h1>
+    <p class="subtitle">Conectando estratégia a resultado</p>
+
+    <div class="group">
+      <label>E-mail</label>
+      <input type="email" id="email" placeholder="seu@email.com">
+    </div>
+
+    <div class="group">
+      <label>Senha</label>
+      <input type="password" id="password" placeholder="••••••••">
+    </div>
+
+    <div class="group">
+      <label>Confirmar senha</label>
+      <input type="password" id="confirm" placeholder="••••••••">
+    </div>
+
+    <div class="group">
+      <label>Telefone</label>
+      <input type="tel" id="phone" placeholder="(11) 99999-9999">
+    </div>
+
+    <div class="group">
+      <label>Empresa</label>
+      <input type="text" id="company" placeholder="Nome da empresa">
+    </div>
+
+    <div class="group">
+      <label>Cargo</label>
+      <input type="text" id="role" placeholder="Seu cargo">
+    </div>
+
+    <button id="signupBtn">Criar conta</button>
+
+    <p id="msg"></p>
+
+    <div class="footer">
+      © 2026 • NEXA Digital
+    </div>
+  </div>
+
+  <script type="module" src="signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>NEXA • Contratações</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================= BODY ================= */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+    body { background: linear-gradient(135deg,#0f0f0f,#151515); color:#fff; padding:40px; }
+
+    /* ================= HEADINGS ================= */
+    h1 { text-align:center; font-size:32px; margin-bottom:40px; }
+    .category h2 { font-size:24px; margin-bottom:24px; border-bottom:1px solid #333; padding-bottom:8px; }
+
+    /* ================= CATEGORY ================= */
+    .category { margin-bottom:60px; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; }
+
+    /* ================= CARD ================= */
+    .card {
+      background:#111;
+      border-radius:16px;
+      padding:20px;
+      border:1px solid #222;
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+
+    /* ================= IMAGE ================= */
+    .card img { border-radius:12px; width:100%; height:160px; object-fit:cover; margin-bottom:12px; }
+
+    /* ================= TEXT ================= */
+    .card h3 { font-size:18px; margin-bottom:6px; color:#a259ff; }
+    .card p { font-size:14px; color:#aaa; margin-bottom:12px; }
+
+    /* ================= BUTTON ================= */
+    .card button {
+      background:#a259ff; border:none; color:#fff; font-weight:600; padding:12px; border-radius:40px; cursor:pointer; transition:0.3s;
+    }
+    .card button:hover { background:#a259ff; }
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width:768px){
+      body{padding:20px;}
+      h1{font-size:28px;}
+      .category h2{font-size:20px;}
+    }
+
+    footer {
+  padding: 2.5rem;
+  text-align: center;
+  color: #666;
+  border-top: 1px solid #222;
+}
+
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem var(--padding-desktop);
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+  </style>
+</head>
+<body>
+   <header>
+    <h1>Nexa Marketing & Performance</h1>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Serviços</a>
+      <a href="#">Portfólio</a>
+      <a href="#">Contato</a>
+
+      <button id="btn-logout">Sair</button>
+
+<script type="module" src="logout.js"></script>
+
+    </nav>
+  </header>
+
+
+<script>
+const categories = {
+  "Filmmakers": [
+    {name:"Lucas Mendes", bio:"Produção audiovisual e storytelling.", img:"https://via.placeholder.com/300x160?text=Filmmaker+1"},
+    {name:"Mariana Costa", bio:"Diretora de vídeo institucional.", img:"https://via.placeholder.com/300x160?text=Filmmaker+2"},
+    {name:"Tiago Lima", bio:"Cinematografia e branding visual.", img:"https://via.placeholder.com/300x160?text=Filmmaker+3"},
+    {name:"Juliana Souza", bio:"Edição e pós-produção criativa.", img:"https://via.placeholder.com/300x160?text=Filmmaker+4"},
+    {name:"André Ribeiro", bio:"Filmmaker focado em marketing digital.", img:"https://via.placeholder.com/300x160?text=Filmmaker+5"}
+  ],
+  "Design Estratégico":[
+    {name:"Rafael Oliveira", bio:"Branding e identidade visual.", img:"https://via.placeholder.com/300x160?text=Design+1"},
+    {name:"Camila Alves", bio:"UX/UI e comunicação digital.", img:"https://via.placeholder.com/300x160?text=Design+2"},
+    {name:"Marcos Vinicius", bio:"Designer gráfico e criativo.", img:"https://via.placeholder.com/300x160?text=Design+3"},
+    {name:"Sofia Rocha", bio:"Design para marketing digital.", img:"https://via.placeholder.com/300x160?text=Design+4"},
+    {name:"Leonardo Cunha", bio:"Identidade corporativa e digital.", img:"https://via.placeholder.com/300x160?text=Design+5"}
+  ],
+  "Social Media":[
+    {name:"Amanda Lima", bio:"Gestão de redes sociais.", img:"https://via.placeholder.com/300x160?text=Social+1"},
+    {name:"Bruno Santos", bio:"Engajamento e performance.", img:"https://via.placeholder.com/300x160?text=Social+2"},
+    {name:"Carla Ferreira", bio:"Social media estratégico.", img:"https://via.placeholder.com/300x160?text=Social+3"},
+    {name:"Diego Rocha", bio:"Planejamento de conteúdo digital.", img:"https://via.placeholder.com/300x160?text=Social+4"},
+    {name:"Fernanda Melo", bio:"Gestão de campanhas e influenciadores.", img:"https://via.placeholder.com/300x160?text=Social+5"}
+  ],
+  "Copywriting":[
+    {name:"Lucas Ribeiro", bio:"Redação persuasiva e vendas.", img:"https://via.placeholder.com/300x160?text=Copy+1"},
+    {name:"Mariana Silva", bio:"Copy estratégica para marketing.", img:"https://via.placeholder.com/300x160?text=Copy+2"},
+    {name:"Tiago Alves", bio:"Textos que convertem.", img:"https://via.placeholder.com/300x160?text=Copy+3"},
+    {name:"Juliana Martins", bio:"Comunicação clara e criativa.", img:"https://via.placeholder.com/300x160?text=Copy+4"},
+    {name:"André Lima", bio:"Escrita para campanhas digitais.", img:"https://via.placeholder.com/300x160?text=Copy+5"}
+  ],
+  "Tráfego Pago":[
+    {name:"Rafael Souza", bio:"Especialista em anúncios.", img:"https://via.placeholder.com/300x160?text=Traffic+1"},
+    {name:"Camila Ferreira", bio:"Gestão de campanhas PPC.", img:"https://via.placeholder.com/300x160?text=Traffic+2"},
+    {name:"Marcos Lima", bio:"Otimização de conversões.", img:"https://via.placeholder.com/300x160?text=Traffic+3"},
+    {name:"Sofia Martins", bio:"Tráfego para performance.", img:"https://via.placeholder.com/300x160?text=Traffic+4"},
+    {name:"Leonardo Alves", bio:"ROI e análise de campanhas.", img:"https://via.placeholder.com/300x160?text=Traffic+5"}
+  ],
+  "Estratégia Digital":[
+    {name:"Amanda Souza", bio:"Planejamento de marketing digital.", img:"https://via.placeholder.com/300x160?text=Strategy+1"},
+    {name:"Bruno Lima", bio:"Consultoria estratégica.", img:"https://via.placeholder.com/300x160?text=Strategy+2"},
+    {name:"Carla Silva", bio:"Estratégia e crescimento online.", img:"https://via.placeholder.com/300x160?text=Strategy+3"},
+    {name:"Diego Costa", bio:"Gestão de projetos digitais.", img:"https://via.placeholder.com/300x160?text=Strategy+4"},
+    {name:"Fernanda Rocha", bio:"Planejamento de campanhas.", img:"https://via.placeholder.com/300x160?text=Strategy+5"}
+  ],
+  "Marketing por IA":[
+    {name:"Lucas Costa", bio:"Automação e análise com IA.", img:"https://via.placeholder.com/300x160?text=AI+1"},
+    {name:"Mariana Lima", bio:"Otimização de processos digitais.", img:"https://via.placeholder.com/300x160?text=AI+2"},
+    {name:"Tiago Silva", bio:"Estratégia baseada em dados.", img:"https://via.placeholder.com/300x160?text=AI+3"},
+    {name:"Juliana Ribeiro", bio:"Marketing personalizado com IA.", img:"https://via.placeholder.com/300x160?text=AI+4"},
+    {name:"André Martins", bio:"Análise preditiva e campanhas.", img:"https://via.placeholder.com/300x160?text=AI+5"}
+  ]
+};
+
+for(const category in categories){
+  document.write(`<div class="category"><h2>${category}</h2><div class="cards">`);
+  categories[category].forEach(user=>{
+    document.write(`<div class="card">
+      <img src="${user.img}" alt="${user.name}">
+      <h3>${user.name}</h3>
+      <p>${user.bio}</p>
+      <button>Contratar</button>
+    </div>`);
+  });
+  document.write(`</div></div>`);
+}
+</script>
+
+<footer>
+    © 2026 • NEXA — Marketing Digital de Alta Performance
+  </footer>
+
+  <script type="module" src="firebase.js"></script>
+<script type="module" src="auth-guard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXA • Login</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f0f0f, #151515);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 420px;
+      background: #111;
+      padding: 48px;
+      border-radius: 24px;
+      border: 1px solid #222;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    .login-container img {
+      display: block;
+      margin: 0 auto 24px;
+      max-width: 140px;
+      width: 100%;
+      opacity: 0.95;
+    }
+
+    .login-container h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .login-container p {
+      font-size: 15px;
+      color: #aaa;
+      margin-bottom: 40px;
+    }
+
+    .input-group {
+      margin-bottom: 24px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: #888;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid #222;
+      background: #0d0d0d;
+      color: #fff;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #610daf;
+    }
+
+    .login-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+      font-size: 13px;
+    }
+
+    .login-actions a {
+      color: #888;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .login-actions a:hover {
+      color: #610daf;
+    }
+
+    input[type="button"] {
+      width: 100%;
+      padding: 16px;
+      border-radius: 40px;
+      border: none;
+      background: #610daf;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .footer-text {
+      margin-top: 32px;
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+    <img src="nexalogo-removebg-preview.png" alt="">
+    <p>Conectando estratégia a resultado</p>
+
+    <form>
+      <div class="input-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="seu@email.com" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" placeholder="Sua senha" required>
+      </div>
+
+      <div class="login-actions">
+        <span></span>
+        <a href="redefiniçãosenha.html">Esqueci minha senha</a>
+        <a href="criarconta.html">Criar nova conta</a>
+
+      </div>
+
+      <input type="button" value="Entrar" id="btn-login">
+    </form>
+
+    <div class="footer-text">
+      © 2026 • NEXA Digital
+    </div>
+  </div>
+  
+<script type="module" src="firebase.js"></script>
+<script type="module" src="login.js"></script>
+
+
+</body>
+</html>

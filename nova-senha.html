@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>NEXA • Nova Senha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #151515);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Inter, sans-serif;
+      color: #fff;
+    }
+    .box {
+      background: #111;
+      padding: 48px;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 420px;
+      border: 1px solid #222;
+    }
+    h1 { margin-bottom: 12px; }
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #222;
+      background: #0d0d0d;
+      color: #fff;
+      margin-top: 16px;
+    }
+    button {
+      margin-top: 24px;
+      width: 100%;
+      padding: 16px;
+      border-radius: 40px;
+      border: none;
+      background: #ff4d4d;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>Nova senha</h1>
+    <p>Digite sua nova senha abaixo.</p>
+
+<input type="password" id="password" placeholder="Nova senha">
+<input type="password" id="confirmPassword" placeholder="Confirmar nova senha">
+
+<button id="btn-save">Salvar senha</button>
+
+  </div>
+
+  <script type="module" src="nova-senha.js"></script>
+</body>
+</html>

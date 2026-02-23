@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXA • Redefinir Senha</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f0f0f, #151515);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: #111;
+      padding: 48px;
+      border-radius: 24px;
+      border: 1px solid #222;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    .container img {
+      display: block;
+      margin: 0 auto 24px;
+      max-width: 140px;
+      opacity: 0.95;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    label {
+      font-size: 13px;
+      color: #888;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid #222;
+      background: #0d0d0d;
+      color: #fff;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #ff4d4d;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      border-radius: 40px;
+      border: none;
+      background: #ff4d4d;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e63939;
+    }
+
+    .back {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .back a {
+      color: #888;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .back a:hover {
+      color: #ff4d4d;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <img src="nexalogo-removebg-preview.png" alt="Logo Nexa">
+
+    <h1>Redefinir senha</h1>
+    <p>Informe seu e-mail para receber o link de redefinição.</p>
+
+    <label for="email">E-mail</label>
+    <input type="email" id="email" placeholder="seu@email.com" required>
+
+    <button id="btn-reset">Enviar link</button>
+
+    <div class="back">
+      <a href="index.html">← Voltar para o login</a>
+    </div>
+  </div>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="reset.js"></script>
+
+</body>
+</html>
