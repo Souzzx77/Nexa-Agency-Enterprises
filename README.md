@@ -6,16 +6,6 @@
   >
 </p>
 
-<style>
- footer {
-  padding: 2.5rem;
-  text-align: center;
-  color: #666;
-  border-top: 1px solid #222;
-}
-  </style>
-
-
 # Nexa — Conectando estratégia a resultado<br>
 
 A **Nexa Enterprises** é uma empresa de marketing digital orientada por estratégia, dados e tecnologia.<br> 
@@ -113,7 +103,7 @@ A identidade visual da Nexa foi pensada para transmitir:
 
 ---
 
-##👤 Fundador & CEO
+## 👤 Fundador & CEO
 
 A Nexa nasce da visão de Vinicios Santana, fundador e CEO da empresa.
 
@@ -151,7 +141,6 @@ Buscando uma oportunidade de prestar seus serviços pela Nexa? Mande seu curricu
 
 ---
 
-<footer>
+
 © 2026 • NEXA
 Fundada para conectar marcas a crescimento real.
-</footer>
