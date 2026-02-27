@@ -132,7 +132,7 @@ Como fundador e CEO, Vinicios acredita que marcas fortes são construídas com d
 ---
 
 
-## 👤 Informações de contato
+# 👤 Informações de contato
 
 📧: Nexaenterprises@gmail.com<br>
 📞: 11 123456789<br>
