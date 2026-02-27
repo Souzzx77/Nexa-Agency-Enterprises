@@ -144,4 +144,4 @@ Buscando uma oportunidade de prestar seus serviços pela Nexa? Mande seu curricu
 
 © 2026 • NEXA
 Fundada para conectar marcas a crescimento real.
-<a href="index.html">Ir ao Site</a>
+<a href="login.html">Ir ao Site</a>
