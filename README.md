@@ -6,6 +6,15 @@
   >
 </p>
 
+<style>
+ footer {
+  padding: 2.5rem;
+  text-align: center;
+  color: #666;
+  border-top: 1px solid #222;
+}
+  </style>
+
 
 # Nexa — Conectando estratégia a resultado<br>
 
@@ -142,6 +151,7 @@ Buscando uma oportunidade de prestar seus serviços pela Nexa? Mande seu curricu
 
 ---
 
-
+<footer>
 © 2026 • NEXA
 Fundada para conectar marcas a crescimento real.
+</footer>
