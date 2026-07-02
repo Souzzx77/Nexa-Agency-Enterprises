@@ -106,12 +106,11 @@ A identidade visual da Nexa foi pensada para transmitir:
 
 ##👤 Fundador & CEO
 
-<p align="center">
+<p align="left">
   <img 
-    src="./dev.jpeg" 
-    alt="Logo Nexa Marketing Digital"
-    width="180"
-  >
+    src="./dev.jpeg"
+    alt="Fotografia do CEO"
+    width="250">
 </p>
 
 A Nexa nasce da visão de Vinicios Santana, fundador e CEO da empresa.
