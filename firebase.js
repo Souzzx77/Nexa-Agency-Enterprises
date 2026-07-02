@@ -17,7 +17,7 @@ import { getStorage } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-s
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyCaK6aDc36I7Ci-3o0Dh8XJhqi88xz30gs",
+    apiKey: "#",
   authDomain: "nexa-agency-enterprises.firebaseapp.com",
   projectId: "nexa-agency-enterprises",
   storageBucket: "nexa-agency-enterprises.firebasestorage.app",
