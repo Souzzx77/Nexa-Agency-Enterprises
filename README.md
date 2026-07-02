@@ -104,7 +104,7 @@ A identidade visual da Nexa foi pensada para transmitir:
 
 ---
 
-##👤 Fundador & CEO
+## 👤 Fundador & CEO
 
 <p align="left">
   <img 
