@@ -308,32 +308,68 @@ color:#fff;
 
 }
 
-.login-links{
+.login-actions{
 
-display:flex;
+    margin-top:18px;
+    margin-bottom:18px;
 
-justify-content:flex-end;
+    display:flex;
 
-margin-top:-8px;
-margin-bottom:28px;
+    justify-content:space-between;
 
-}
+    align-items:center;
 
-.login-links a{
+    gap:20px;
 
-text-decoration:none;
+    width:100%;
 
-font-size:.85rem;
-
-color:var(--muted);
-
-transition:.3s;
+    padding-top:6px;
 
 }
 
-.login-links a:hover{
+.action-link{
 
-color:#fff;
+    font-size:.9rem;
+
+    color:var(--muted);
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    white-space:nowrap;
+
+}
+
+.action-link:hover{
+
+    color:#A855F7;
+
+}
+
+.action-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-3px;
+
+    width:0%;
+
+    height:1px;
+
+    background:#A855F7;
+
+    transition:.3s;
+
+}
+
+.action-link:hover::after{
+
+    width:100%;
 
 }
 
@@ -511,8 +547,6 @@ text-align:center;
             Faça login para acessar sua conta Nexa.
         </p>
 
-        <div id="message"></div>
-
         <form id="loginForm">
 
             <div class="input-group">
@@ -550,11 +584,15 @@ text-align:center;
 
             </div>
 
-            <div class="login-links">
+            <div class="login-actions">
 
-                <a href="4senhaesquecida.html">
-                    Esqueci minha senha
-                </a>
+    <a href="forgot.html" class="action-link">
+        Esqueci minha senha
+    </a>
+
+    <a href="register.html" class="action-link">
+        Criar conta
+    </a>
 
             </div>
 
@@ -609,6 +647,9 @@ text-align:center;
 
 </div>
 
+
+<script type="module" src="auth.js"></script>
+
 <script>
 
 const toggle=document.getElementById("togglePassword");
@@ -621,17 +662,13 @@ toggle.addEventListener("click",()=>{
 
         password.type="text";
 
-        toggle.classList.remove("fa-eye");
-
-        toggle.classList.add("fa-eye-slash");
+        toggle.classList.replace("fa-eye","fa-eye-slash");
 
     }else{
 
         password.type="password";
 
-        toggle.classList.remove("fa-eye-slash");
-
-        toggle.classList.add("fa-eye");
+        toggle.classList.replace("fa-eye-slash","fa-eye");
 
     }
 
@@ -640,19 +677,6 @@ toggle.addEventListener("click",()=>{
 </script>
 
 <script type="module" src="auth.js"></script>
-
-<script>
-    import { auth } from "./firebase.js";
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
-
-onAuthStateChanged(auth, (user) => {
-
-    if (!user) {
-        window.location.replace("index.html");
-    }
-
-});
-</script>
 
 </body>
 
