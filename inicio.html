@@ -16,6 +16,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+
 <style>
 
 :root{
@@ -32,7 +33,29 @@
 --card:rgba(255,255,255,.04);
 --border:rgba(255,255,255,.08);
 
---radius:26px;
+--radius:26px;    
+--text:#FFFFFF;
+--muted:#A8AFC6;
+--heading:#FFFFFF;
+
+}
+
+body.light-theme{
+
+        --bg:#F4F7FC;
+    --bg2:#E9EEF8;
+
+    --blue:#0EA5E9;
+    --purple:#2563EB;
+    --purple-soft:#60A5FA;
+
+    --text:#1E293B;
+    --heading:#0F172A;
+    --muted:#64748B;
+
+    --card:rgba(255,255,255,.92);
+    --border:rgba(15,23,42,.08);
+
 }
 
 *{
@@ -52,9 +75,20 @@ radial-gradient(circle at top left,rgba(0,191,255,.08),transparent 30%),
 radial-gradient(circle at top right,rgba(139,44,255,.18),transparent 35%),
 linear-gradient(180deg,#050714,#090d1f);
 
-color:white;
+color:var(--text);
 overflow-x:hidden;
+background:
+linear-gradient(
+180deg,
+var(--bg),
+var(--bg2));
+
+transition:
+background .35s,
+color .35s;
 }
+
+
 
 .container{
 width:min(92%,1200px);
@@ -167,7 +201,7 @@ transition:.3s;
 
 .desktop-menu a:hover{
 
-color:white;
+color:var(--text);
 
 }
 
@@ -301,7 +335,7 @@ HERO
 
     border:1px solid rgba(255,255,255,.08);
 
-    color:#fff;
+    color:var(--text);;
 
     font-size:.9rem;
     font-weight:600;
@@ -365,7 +399,7 @@ HERO
 }
 
 .btn-primary{
-    color:#fff;
+    color:var(--text);
 
     background:linear-gradient(
         135deg,
@@ -382,7 +416,7 @@ HERO
 
 .btn-secondary{
 
-    color:#fff;
+    color:var(--text);
 
     border:1px solid rgba(255,255,255,.10);
 
@@ -420,7 +454,7 @@ cursor:pointer;
 font-size:.95rem;
 font-weight:700;
 
-color:#fff;
+color:var(--text);
 
 background:
 linear-gradient(
@@ -696,7 +730,7 @@ cursor:pointer;
 
 font-size:1.8rem;
 
-color:white;
+color:var(--text);
 
 }
 
@@ -726,7 +760,7 @@ text-decoration:none;
 
 font-weight:600;
 
-color:white;
+color:var(--text);
 
 transition:.3s;
 
@@ -792,7 +826,7 @@ transition:.3s;
 
 .mobile-social a:hover{
 
-color:white;
+color:var(--text);
 
 }
 
@@ -814,7 +848,7 @@ text-decoration:none;
 
 font-weight:700;
 
-color:white;
+color:var(--text);
 
 background:linear-gradient(
 135deg,
@@ -2889,7 +2923,7 @@ transform:translateY(0);
 
     <div id="settingsMenu" class="settings-menu">
 
-        <a href="404.html">
+        <a href="dashboard.html">
             <i class="fa-solid fa-user"></i>
             Minha conta
         </a>
@@ -2899,8 +2933,8 @@ transform:translateY(0);
             Notificações
         </a>
 
-        <a href="404.html">
-            <i class="fa-solid fa-moon"></i>
+        <a href="mudar-tema.html" id="themeToggle">
+            <i class="fa-solid fa-paintbrush"></i>
             Tema
         </a>
 
@@ -4053,17 +4087,17 @@ Explorar Serviços
         <a href="https://www.instagram.com/agencynexaenterprises/" target="_blank">Acessar</a>
       </div>
 
-      <!-- TIKTOK -->
-      <div class="social-card tiktok">
+      <!-- NexaBot -->
+      <div class="social-card nexabot">
         <div class="social-left">
-          <i class="fab fa-tiktok"></i>
+          <i class="fas fa-robot"></i>
           <div class="social-info">
-            <h4>TikTok</h4>
-            <p>Conteúdo rápido e tendências</p>
+            <h4>NexaBot</h4>
+            <p>Atendimento automatizado e eficiente</p>
           </div>
         </div>
-        <a href="https://www.tiktok.com/@agencynexaenterprises" target="_blank">Acessar</a>
-      </div>
+        <a href="https://typebot.co/my-typebot-lyx2eqn" target="_blank">Acessar</a>
+        </div>
 
       <!-- DISCORD -->
       <div class="social-card discord">
@@ -4278,19 +4312,6 @@ header.classList.remove("scrolled");
 
 </script>
 
-<script>import { signOut } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
-
-function logout(){
-
-    signOut(auth).then(() => {
-
-        window.location.replace("index.html");
-
-    });
-
-}
-</script>
-
 <script type="module" src="auth.js"></script>
 
 <script>
@@ -4319,5 +4340,73 @@ settingsMenu.onclick = function(e){
 }
 
 </script>
+
+<script>
+    const themeToggle = document.getElementById("themeToggle");
+
+// Carrega o tema salvo
+if(localStorage.getItem("theme") === "light"){
+
+    document.body.classList.add("light-theme");
+
+}
+
+themeToggle.addEventListener("click", e=>{
+
+    e.preventDefault();
+
+    document.body.classList.toggle("light-theme");
+
+    localStorage.setItem(
+
+        "theme",
+
+        document.body.classList.contains("light-theme")
+        ? "light"
+        : "dark"
+
+    );
+
+});
+
+const icon = document.getElementById("themeIcon");
+
+function atualizarIcone(){
+
+    if(document.body.classList.contains("light-theme")){
+
+        icon.className = "fa-solid fa-sun";
+
+    }else{
+
+        icon.className = "fa-solid fa-moon";
+
+    }
+
+}
+
+atualizarIcone();
+
+themeToggle.addEventListener("click", e=>{
+
+    e.preventDefault();
+
+    document.body.classList.toggle("light-theme");
+
+    atualizarIcone();
+
+    localStorage.setItem(
+
+        "theme",
+
+        document.body.classList.contains("light-theme")
+        ? "light"
+        : "dark"
+
+    );
+
+});
+</script>
+
 </body>
 </html>
